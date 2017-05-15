@@ -1,17 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Weather App</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Galante Weather</title>
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
+	<!-- getting bootstrap -->
+    <link rel="stylesheet" href = "bootstrap-4.0.0-alpha.6-dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
-	<H1>Weather App</H1>
-	<h4>Lorem ipsum sit dolor</h4>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<div class="dailyWeather container-fluid">
+		<div class="location">
+			<h2>Colorado Springs</h2>
+			<h3>Colorado</h3>
+		</div>
+		<div class="currentWeather">
+			<h1>60</h1>
+			<h2>Sunny</h2>
+			<p class="bodyCopy">Next Hour- Clear. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+		</div>
+	</div>
+	<div class="fiveDayForecast container-fluid">
+		<h2 id="fiveDaySummary">Mixed percipitation tomorrow through Monday, with Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h2>
+	</div>
 
 </body>
+<footer>
+		<h2>Design & Development</h2>
+		<p class="bodyCopy">Annastasia Galante</p>
+<!-- Bootstrap core JavaScript ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</footer>
 </html>
