@@ -4,22 +4,25 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Galante Weather</title>
+    <title>Galante Weather</title>
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
 	<!-- getting bootstrap -->
     <link rel="stylesheet" href = "bootstrap-4.0.0-alpha.6-dist/css/bootstrap.css">
+    <!-- My stylesheet -->
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script type="text/javascript" src="javascript.js"></script>
 </head>
-<body>
+<body onload="getWeather()">
 	<div class="dailyWeather container-fluid">
 		<div class="location">
-			<h3>Colorado Springs</h3>
-			<h4>Colorado</h4>
+			<h3 id="currentCity">Fail City</h3>
+			<h4 id="currentState">Fail State</h4>
+			<!--<script type="text/javascript">
+				document.getElementById("currentCity").textContent = "inline script works";
+			</script>-->
 		</div>
 		<div class="currentWeather">
-			<h1>60</h1>
+			<h1 id="currentTempDisplay">--</h1>
 			<h2>Sunny</h2>
 			<p class="bodyCopy">Next Hour- Clear. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
 		</div>
@@ -38,7 +41,6 @@
     </div><!--/footer-->
     </div><!--/flex-parent -->
     </div><!--/flex-parent-push -->
-
 </body>
 <footer>
 <!-- Bootstrap core JavaScript ================================================== -->
@@ -49,5 +51,8 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- My Javascript -->
+	<script type="text/javascript" src="javascript.js"></script>
 </footer>
 </html>
