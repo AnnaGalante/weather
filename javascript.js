@@ -2,16 +2,20 @@ function getWeather(){
 	//get Location   ////////////////
 	var locationOutput = document.getElementById("locationTest");
 
-	function getLocation(){
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(showPosition);
-		} else {
-			locationOutput.textContent = "Please allow geolocation."
-		}
+	var options = {
+		//enableHighAccuracy: true,// enabling increases load time
+		timeout: 8000,
+		maximumAge: 0
 	};
-	function showPosition(position){
-		locationOutput.textContent = "Lat: "+ position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+	function success(pos) {
+		var crd = pos.coords;
+		locationOutput.textContent = "Lat: " + crd.latitude + ", Long: " + crd.longitude;
 	};
+	function error (err) {
+		locationOutput.textContent = "This isn't working";
+	};
+
+	navigator.geolocation.getCurrentPosition(success, error, options);
 
 	//Load API ////////////////
  
