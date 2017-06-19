@@ -30,10 +30,9 @@ function getWeather(){
 
  	//Parse through JSON File///////////////////////
  	var darkSkyResponse = xhr.response;
+ 	//var fetchedTemp = xhr[currently[temperature].id]darkSkyResponse; 
+ 	//Above is breaking shit for some reason so its commented out
 
- 	//var fetchedTemp = xhr[currently[temperature]]darkSkyResponse;
- 	//this is breaking shit for some reason so its commented out
- 	
  	//Pop into page ////////////////////////
 
  	//currentTempDisplay.textContent = fetchedTemp;
