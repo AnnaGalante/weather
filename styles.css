@@ -32,6 +32,12 @@ h4{
 	font-size: 14px;
 	font-weight: 300;
 }
+.tempUnit{
+	font-size: 12px;
+	font-weight: 250;
+	vertical-align: top;
+}
+
 #fiveDaySummary{
 	text-align: center;
 }

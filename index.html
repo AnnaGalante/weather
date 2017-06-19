@@ -12,17 +12,18 @@
     <!-- My stylesheet -->
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body onload="getWeather()">
+<body onload="getLocation();getWeather();">
 	<div class="dailyWeather container-fluid">
 		<div class="location">
-			<h3 id="currentCity">Fail City</h3>
-			<h4 id="currentState">Fail State</h4>
+			<h3 id="currentCity">City</h3>
+			<h4 id="currentState">State</h4>
+			<h3 id="locationTest"> </h3>
 			<!--<script type="text/javascript">
 				document.getElementById("currentCity").textContent = "inline script works";
 			</script>-->
 		</div>
 		<div class="currentWeather">
-			<h1 id="currentTempDisplay">--</h1>
+			<h1 id="currentTempDisplay">2<span class="tempUnit">&deg F</span></h1>
 			<h2>Sunny</h2>
 			<p class="bodyCopy">Next Hour- Clear. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
 		</div>
