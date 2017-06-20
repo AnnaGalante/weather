@@ -1,11 +1,13 @@
-//useful variables
-	var xhr = new XMLHttpRequest();
+
+window.onload = function getWeather(){
+	//useful variables
 	var locationOutput = document.getElementById("locationTest");
 	var city = document.getElementById("currentCity");
 	var state = document.getElementById("currentState");
 	var currentTempDisplay = document.getElementById("currentTempDisplay");
-function getLocation(){
-	//get Location   ////////////////
+	var serverInfo = document.getElementById("serverInfo");
+
+	//get Location   ////////////////////////////////////////////////////////////////////////////
 	var options = {
 		//enableHighAccuracy: true, //increases load time
 		timeout: 8000,
@@ -19,26 +21,41 @@ function getLocation(){
 		locationOutput.textContent = "Error. Please Enable ";
 	};
 
-	navigator.geolocation.getCurrentPosition(success, error, options) //get location
-};
+	navigator.geolocation.getCurrentPosition(success, error, options); 
 
-function getWeather(){
-	//Set up API (variables, lat/lon, key, and api URL its self) ////////////////
-	var latlon = crd.latitude + "," + crd.longitude;
-	var darkSkyKey = "0a8032c051266de6bab2af3789f66756"; //obscure this later
-	var darkSkyAPI = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + latlon;
+	//get Dark Sky API   ////////////////////////////////////////////////////////////////////////////
 
- 	//Parse through JSON File///////////////////////
- 	var darkSkyResponse = xhr.response;
- 	//var fetchedTemp = xhr[currently[temperature].id]darkSkyResponse; 
- 	//Above is breaking shit for some reason so its commented out
+	//////////////////////////////////////////////////////////////////////////// 
+	// Will use this block of code once fetch is working with the test url  ////////
+	//var latlon = crd.latitude + "," + crd.longitude;
+	//var darkSkyKey = "0a8032c051266de6bab2af3789f66756"; //obscure this later
+	//var darkSkyAPI = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + latlon;
+	////////////////////////////////////////////////////////////////////////////
 
- 	//Pop into page ////////////////////////
-
- 	//currentTempDisplay.textContent = fetchedTemp;
- 	//Call the API ///////////////////////////////////////////
- 	xhr.open('GET', 'darkSkyAPI'); //gets the response
- 	xhr.withCredentials = true; //tells server that creditials are needed?
- 	xhr.send(null); //not POST, just GET, so send is empty
+	var url = "https://api.darksky.net/forecast/0a8032c051266de6bab2af3789f66756/37.8267,-122.4233";
+	var fetchData = {
+			method: 'GET',
+			mode: 'no-cors'
+		};
+  
+  	var response = new Response();
+  
+	fetch(url, fetchData)
+    	//.then(checkStatus)
+    .then(function(response){ 
+    	return response.json(); 
+    	}) //transform the data into json
+    .then(function(data){
+    	//code for handeling API data
+    	let darkSkyData = data.results; //get the results
+    	currentTempDisplay.textContent = darkSkyData.currently.temperature; //current temperature
+    })
+   	.catch(function(error) {
+    	console.log(error);
+  	}); 
 	
-};
+	
+};//end getWeather
+
+
+
